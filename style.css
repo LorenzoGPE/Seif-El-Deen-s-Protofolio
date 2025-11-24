@@ -1,0 +1,428 @@
+/* ========== VARIABLES ========== */
+:root {
+    --color: #6a00ff;
+    --color2:#3a0073;
+    --mode: #000000;
+    --text: #ffffff;
+/*
+نسخة احتياطية من الالوان
+#6a00ff;
+#3a0073;
+#000000;
+#ffffff;
+*/
+}
+
+/* ========== BODY ========== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(120deg, var(--mode), var(--color));
+    background-size: 600% 600%;
+    animation: gradientAnim 20s ease infinite;
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    user-select: none;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-img img {
+        width: 60%;
+    }
+    .Card_m {
+        max-width: 90%;
+    }
+    .flex-gallery img{
+        width: 100%;
+    }
+}
+
+
+/* ========== TYPOGRAPHY ========== */
+
+h1, h2, h4, h5, h6, p, a, ul {
+    color: var(--text);
+}
+
+
+main {
+    flex: 1;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ========== ANIMATION ========== */
+
+@keyframes gradientAnim {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ========== SECTION ========== */
+
+section {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.hero_s {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-img img {
+    width: 280px;
+    max-width: 100%;
+    filter: drop-shadow(0 0 10px var(--color));
+    border-radius: 20px;
+    transition: transform .3s ease;
+}
+
+.hero-img img:hover {
+    transform: scale(1.05);
+}
+
+.members_s{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* ========== HEADER & FOOTER ========== */
+
+.Header, .Footer {
+    width: 100%;
+    border-radius: 20px;
+    border: 2px solid var(--color);
+    box-shadow: 0px 5px 20px var(--color2);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.Header {
+    height: 80px;
+    background: radial-gradient(circle at 0% 0%, var(--mode), var(--color2));
+    position: sticky;
+    top: 0;
+    margin-bottom: 25px;
+    z-index: 999;
+}
+
+.Header:hover {
+    background: radial-gradient(circle at 100% 100%, var(--mode), var(--color));
+    border-color: var(--text);
+}
+
+.Footer {
+    height: 50px;
+    background: radial-gradient(circle at 120% 0%, var(--mode), var(--color2));
+    padding: 10px 0;
+}
+
+.Footer:hover {
+    background: radial-gradient(circle at 0% 100%, var(--mode), var(--color));
+    border-color: var(--text);
+}
+
+.HeaderText, .FooterText {
+    color: var(--color);
+    font-weight: bold;
+    text-shadow: 3px 3px 2px var(--mode);
+    user-select: none;
+    transition: color 0.3s ease;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.HeaderText:hover, .FooterText:hover {
+    color: var(--text);
+}
+
+/* ========== BUTTONS ========== */
+
+.settings_btn {
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid var(--color);
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--color2), var(--color));
+    color: var(--text);
+    box-shadow: 0px 5px 15px var(--color2);
+    transition: all 0.3s ease;
+}
+
+.settings_btn:hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0px 10px 20px var(--color2);
+    background: linear-gradient(135deg, var(--mode)0, var(--color2));
+    border-color: var(--text);
+}
+
+button {
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 24px;
+    font-weight: bold;
+    border: 3px solid var(--color);
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--color2), var(--color));
+    color: #fff;
+    box-shadow: 0px 5px 20px var(--color2);
+    transition: all 0.3s ease;
+    margin-bottom: 25px;
+}
+
+button:hover {
+    transform: scale(1.08) translateY(-3px);
+    box-shadow: 0px 10px 25px var(--color);
+    background: linear-gradient(135deg, #000000, var(--color2));
+    border-color: var(--text);
+}
+
+/* ========== CARD ========== */
+
+.Card {
+    max-width: 250px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 20px;
+    border: 3px solid var(--color);
+    background: radial-gradient(circle at 25% 25%, var(--color2), var(--mode), var(--mode));
+    box-shadow: 0px 5px 25px var(--color);
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.Card:hover {
+    transform: scale(1.05);
+    background: radial-gradient(circle at 100% 100%, var(--color), var(--color2), var(--mode));
+    box-shadow: 0px 10px 35px var(--color2);
+    border-color: var(--text);
+}
+
+.Card img {
+    width: 90%;
+    height: auto;
+    object-fit: cover;   /* يخلي الصورة شكلها نظيف */
+    display: block;
+    margin: 0 auto;
+}
+
+
+.Card_fe {
+    width: 90%;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 20px;
+    border: 3px solid var(--color);
+    background: radial-gradient(circle at 25% 25%, var(--color2), var(--mode), var(--mode));
+    box-shadow: 0px 5px 25px var(--color);
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.Card_fe:hover {
+    transform: scale(1.05);
+    background: radial-gradient(circle at 100% 100%, var(--color), var(--color2), var(--mode));
+    box-shadow: 0px 10px 35px var(--color2);
+    border-color: var(--text);
+}
+
+.Card_m {
+    flex: 1 1 250px;
+    max-width: 250px;  
+    margin: 20px 0;
+    padding: 25px;
+    border-radius: 20px;
+    border: 3px solid var(--color);
+    background: radial-gradient(circle at 25% 25%, var(--color2), var(--mode), var(--mode));
+    box-shadow: 0px 5px 25px var(--color);
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.Card_m:hover {
+    transform: scale(1.05);
+    background: radial-gradient(circle at 100% 100%, var(--color), var(--color2), var(--mode));
+    box-shadow: 0px 10px 35px var(--color2);
+    border-color: var(--text);
+}
+
+.members_imgs{
+    max-width: 100%;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.members_imgs:hover , .game_img:hover{
+    box-shadow: 0px 10px 10px var(--color);
+}
+
+.members_names{
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.game_name{
+    font-size: 25px;
+}
+
+.game_img{
+    border-radius: 20px;
+    display: block;
+    justify-self: center;
+    transition: all 0.3s ease;
+}
+
+.masonry {
+  columns: 3 250px;
+  gap: 15px;
+}
+
+.masonry > .like_card {
+  break-inside: avoid;
+  margin-bottom: 15px;
+}
+
+.like_card {
+    width: 95%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 3px solid var(--color);
+    background: radial-gradient(circle at 25% 25%, var(--color2), var(--mode), var(--mode));
+    box-shadow: 0px 5px 25px var(--color);
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.like_card:hover {
+    transform: scale(1.05);
+    background: radial-gradient(circle at 100% 100%, var(--color), var(--color2), var(--mode));
+    box-shadow: 0px 10px 35px var(--color2);
+    border-color: var(--text);
+    border-color: var(--text);
+}
+
+/* ========== INDEX PAGE ========== */
+
+.hi {
+    font-weight: bold;
+    font-size: 32px;
+    text-align: center;
+    margin-top: 50px;
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+.hi:hover {
+    font-size: 36px;
+    text-shadow: 5px 5px 10px var(--text);
+}
+
+h3 {
+    text-align: center;
+    font-size: 28px;
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+h3:hover:not(.game_name) {
+    font-size: 30px;
+    text-shadow: 3px 3px 5px var(--text);
+}
+
+ul {
+    user-select: none;
+}
+
+.intro {
+    font-size: 22px;
+    margin-top: 15px;
+    color: var(--text);
+    opacity: 0.8;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    margin-top: 5px;
+    color: var(--text);
+    opacity: 0.85;
+    line-height: 1.4;
+    font-weight: 600;
+    text-align: center;
+}
+/* ========== DEV PAGE ========== */
+.ContactUs_D,
+.ContactUs_E {
+    display: block;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.email{
+    user-select:none;
+    cursor: pointer;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+.email:hover{
+    user-select:all;
+    font-size: 26px;
+    text-shadow: 5px 5px 5px var(--text);
+}
+
+/* ========== SETTINGS PAGE ========== */
+
+.radio {
+    accent-color: var(--mode);
+    scale: 1.5;
+}
+
+label {
+    font-weight: bold;
+    font-size: 32px;
+    text-align: center;
+    text-shadow: 5px 5px 5px var(--text);
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.options {
+    display: flex;
+    justify-content: space-around;
+}
